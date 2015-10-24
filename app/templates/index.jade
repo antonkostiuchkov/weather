@@ -1,0 +1,56 @@
+doctype html
+html(lang='en')
+  head
+
+    // Basic Page Needs
+    meta(charset='utf-8')
+    title Is it raining?
+    meta(name='description', content='')
+    meta(name='author', content='')
+
+    // Mobile Specific Metas
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+
+    // Font
+    link(href='https://fonts.googleapis.com/css?family=Montserrat', rel='stylesheet', type='text/css')
+
+    // CSS
+    link(rel='stylesheet', href='main.css')
+
+    // Favicon
+    link(rel='icon', type='image/png', href='img/favicon.png')
+
+
+  body
+
+    header
+      h1.site-title Is It Raining Now?
+      .icon-menu.nav-toggle
+      nav.main-navigation
+        ul
+          li
+            h2.header Select a City
+            hr
+          li
+            a(href="#").nav-toggle.city Current Location
+          li
+            a(href="#").nav-toggle.city Kiev
+          li
+            a(href="#").nav-toggle.city Wroclaw
+          li
+            a(href="#").nav-toggle.city Chicago
+          li
+            h2
+              a(href="#").nav-toggle Close
+
+    main
+      h1#temp.icon-menu 65°C
+
+      p#summary Partly Cloudy
+
+      p#location.icon-location Kiev
+
+
+    // JS
+    script(src='all.js')

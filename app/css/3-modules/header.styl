@@ -1,0 +1,62 @@
+header
+  background #333
+  color #fff
+  padding 20px
+  position relative
+
+.site-title
+  font-size 20px
+  text-align: center
+  margin 0
+
+.nav-toggle
+  position absolute
+  top 1px
+  cursor pointer
+
+a
+  color #fff
+  text-decoration none
+
+
+nav li
+  list-style none
+
+.main-navigation
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100%
+  text-align: center
+  background #222
+  transform translateX(-100%)
+  transition all 250ms ease-in-out
+
+  &.open
+    transform translateX(0)
+
+  .nav-toggle
+    position relative
+
+.main-navigation ul
+  margin 0 60px
+  padding 0
+
+  a
+    padding 10px 20px
+    display block
+    font-size: 1.5em
+
+    &:hover
+      background lighten(#333, 5%)
+
+
+  .header
+    margin 50px 20px 10px
+    font-size: 2.5em
+
+
+
+.icon-menu
+  font-size: 40px

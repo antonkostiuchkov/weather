@@ -1,0 +1,25 @@
+{
+  "name": "task",
+  "version": "0.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "autoprefixer": "~5.2.0",
+    "browser-sync": "~2.8.2",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-postcss": "~6.0.0",
+    "gulp-uglify": "^1.4.2",
+    "lost": "~6.5.0",
+    "postcss-normalize": "~0.1.1",
+    "rucksack-css": "^0.8.2",
+    "gulp-stylus": "~2.1.0",
+    "gulp-jade": "~1.1.0",
+    "rupture": "~0.6.1"
+  }
+}
