@@ -1,6 +1,8 @@
 $(function () {
 
+  closeWithEscape ();
   toggleMenu ();
+  loadCity('Kiev');
   updateCity ();
 
 });
@@ -14,6 +16,21 @@ function toggleMenu () {
     $('.main-navigation').toggleClass('open');
   });
 };
+
+// Hit escape key to close the nav
+function closeWithEscape () {
+  var $document = $(document);
+  var $mainNav = $('.main-navigation');
+
+  $document.keyup(function(e) {
+  if (e.keyCode == 27) {
+    if ($mainNav.hasClass('open')) {
+      $mainNav.toggleClass('open');
+    }
+  }
+  });
+};
+
 
 
 // Building associative arrays
@@ -47,6 +64,7 @@ function updateCity () {
 
   $city.on('click', function() {
     loadCity($(this).html());
+    // $('#temp').
   });
 };
 
