@@ -5,6 +5,8 @@ $(function () {
   loadCity('Kiev');
   updateCity ();
 
+
+
 });
 
 
@@ -44,7 +46,7 @@ var icons = { 'clear-day' : 'icon-sun',
               'fog' : 'icon-cloud',
               'cloudy' : 'icon-clouds',
               'partly-cloudy-day' : 'icon-cloud-sun',
-              'partly-cloudy-night' : 'icon-cloud-moor'
+              'partly-cloudy-night' : 'icon-cloud-moon'
             };
 
 var cities = {
@@ -96,6 +98,9 @@ function loadWeather (cityCoords) {
 
   var forecastURL = 'https://api.forecast.io/forecast/be1c586691314d260648274cb1519ea3/' + latlng;
 
+  var $temp = $('#temp');
+  var $tomTemp = $('#tomorrow-temp');
+
   $.ajax({
     url: forecastURL,
     jsonpCallback: 'jsonCallback',
@@ -103,9 +108,15 @@ function loadWeather (cityCoords) {
     dataType: 'jsonp',
     success: function (json) {
 
-      $('#temp').html(Math.round((json.currently.temperature - 32) * 5 / 9) + '°C');
-      $('#temp').attr('class', icons[json.currently.icon]);
+      $temp.html(Math.round((json.currently.temperature - 32) * 5 / 9) + '°C');
+      $temp.attr('class', icons[json.currently.icon]);
       $('#summary').html(json.currently.summary);
+
+      // Forecast for tomorrow
+
+      $tomTemp.html(Math.round((json.daily.data[1].temperatureMax - 32) * 5 / 9) + '°C');
+      $tomTemp.attr('class', icons[json.daily.data[1].icon]);
+      $('#rain-chance').html('Precipitation: ' + json.daily.data[1].precipProbability * 100 + '%');
 
     },
     error: function (e) {
